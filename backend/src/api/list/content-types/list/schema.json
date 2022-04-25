@@ -14,16 +14,33 @@
   "attributes": {
     "title": {
       "type": "string",
-      "required": true
+      "required": true,
+      "unique": true
     },
-    "slug": {
+    "price": {
+      "type": "biginteger",
+      "required": true,
+      "unique": true
+    },
+    "rentFrequency": {
       "type": "string",
-      "required": true
+      "required": true,
+      "unique": false
+    },
+    "isVerified": {
+      "type": "boolean",
+      "required": true,
+      "private": true
+    },
+    "externalID": {
+      "type": "string",
+      "required": true,
+      "unique": true
     },
     "coverPhoto": {
       "type": "media",
-      "multiple": false,
-      "required": true,
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
@@ -31,17 +48,19 @@
         "audios"
       ]
     },
-    "frequency": {
-      "type": "string",
-      "required": true
+    "rooms": {
+      "type": "integer"
     },
-    "price": {
-      "type": "biginteger",
-      "required": true
+    "baths": {
+      "type": "integer"
+    },
+    "area": {
+      "type": "decimal"
     },
     "purpose": {
       "type": "string",
-      "required": true
+      "required": false,
+      "unique": false
     }
   }
 }

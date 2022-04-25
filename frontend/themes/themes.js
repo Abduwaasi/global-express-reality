@@ -6,6 +6,9 @@ const themes = extendTheme({
         white:"#ffffff",
         lightBlue:"#F6F9FE",
         dark:"#0A0A0A",
+        darkBg:"#1B1825",
+        orange:"#FD743E",
+        lightText:"#333333"
     },
     styles:{
         global:{
@@ -15,7 +18,12 @@ const themes = extendTheme({
              margin:0,
             },
             body:{
+                width:"100%",
+                maxWidth:"1440px",   
+                mx:"auto",
+                textRendering: "optimizeLegibility",
                 lineHeight:"base",
+              
             },
             li:{
                 listStyleType:"none"

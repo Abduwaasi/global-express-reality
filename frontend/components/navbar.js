@@ -9,7 +9,7 @@ const Navbar =()=>{
     return <Box sx={styles.container}>
     <Flex sx={styles.container.flexWrapper}>
         <Link href="/" passHref>
-            <Text as ="a" sx={styles.container.flexWrapper.logo}>Classic Global <br/><span style={{color:"#4373AF"}}>Concept</span></Text>
+            <Text as ="a" sx={styles.container.flexWrapper.logo}>Classic Global <br/><span style={{color:"#FD743E"}}>Concept</span></Text>
         </Link>
         <Spacer/>
         <Flex sx={styles.container.flexWrapper.menu}>
@@ -26,14 +26,15 @@ const Navbar =()=>{
                 <Text as="a" sx={styles.container.flexWrapper.menu.items}>Contact</Text>
             </Link>
         </Flex>
-       { toggle&& <Box onClick={ ()=>setToggle(!toggle)}>
-        <MobileDrawer/>
-       </Box> }
+      
         <Box sx={styles.container.flexWrapper.button} onClick={ ()=>setToggle(!toggle)}>  
         <Icon size="1.2rem" as={!toggle? FaBars:FaTimes}/>
         </Box>
     </Flex>
-  
+    { toggle&& <Box onClick={ ()=>setToggle(!toggle)}
+       w="100%" height="100%" position="absolute" left="0">
+        <MobileDrawer/>
+       </Box> }
     </Box>
 }
 
@@ -44,20 +45,23 @@ const styles ={
         width:"100%",
         maxWidth:"1440px",
         height:"80px",
+        bg:"darkBg",   
         mx:"auto",
         px:["1rem","1.5rem",,"5rem"],
         position:"sticky",
         left:0,
         top:0,
+        zIndex:100,
         flexWrapper:{
             justifyContent:"space-between",
             alignItems:"center",
             width:"100%",
             height:"100%",
+            
 
             logo:{
                 fontSize:["0.8rem",,"1rem"],
-                color:"dark",
+                color:"#fff",
                 fontWeight:"bold",
                 lineHeight:"20px",
                 // flex:1
@@ -72,17 +76,17 @@ const styles ={
                     fontSize:"1rem",
                     fontWeight:"500",
                     letterSpacing:"0.2",
-                    color:"dark",
+                    color:"white",
                     mx:"20px",
 
                     _hover:{
-                        color:"blue",
+                        color:"pink",
                     }
                 }
             },
             button:{
                 display:["flex",,,"none"],
-                bg:"blue",
+                bg:"orange",
                 color:"white",
                 p:"8px",
                 borderRadius:"8px",
